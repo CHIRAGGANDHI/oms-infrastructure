@@ -21,4 +21,6 @@ terraform {
 #provider block
 provider "aws" {
   region = var.aws_region
+  access_key = var.global_access_key  
+  secret_key = var.global_secret_key
 }
