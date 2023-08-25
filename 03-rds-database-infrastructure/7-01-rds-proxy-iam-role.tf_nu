@@ -1,0 +1,50 @@
+# Create an IAM policy
+resource "aws_iam_policy" "rds_proxy_secretmanager_policy" {
+
+  name = "${local.name}-rds-proxy-secretmanager-policy"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {        
+        Effect = "Allow"
+        Action = [
+          "secretsmanager:GetRandomPassword",
+				  "secretsmanager:CreateSecret",
+				  "secretsmanager:ListSecrets"
+        ]
+        Resource = "*"
+      },
+      {
+        Effect: "Allow"
+        Action: ["secretsmanager:*"]
+        Resource: [aws_secretsmanager_secret.rds_secretsmanager_credential.id]
+      }
+    ]
+  })
+}
+
+# Create an IAM role
+/*resource "aws_iam_role" "rds_proxy_role" {
+  name = "${local.name}-rds-proxy-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Service = "rds.amazonaws.com"
+        }
+        Action = "sts:AssumeRole"
+      }
+    ]
+  })
+}
+
+# Attach the IAM policy to the IAM role
+resource "aws_iam_policy_attachment" "rds_proxy_role_policy_attachment" {
+  name = "rds-proxy-role-policy-attachment"
+  policy_arn = aws_iam_policy.rds_proxy_secretmanager_policy.arn
+  roles       = [aws_iam_role.rds_proxy_role.name]
+}*/
