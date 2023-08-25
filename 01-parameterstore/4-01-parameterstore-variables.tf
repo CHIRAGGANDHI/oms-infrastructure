@@ -22,3 +22,11 @@ variable "mq_broker_admin_password" {
   sensitive   = true
 }
 
+variable "global_access_key" 
+{
+  type        =  string
+}  
+variable "global_secret_key" 
+{
+  type        = string
+}  
