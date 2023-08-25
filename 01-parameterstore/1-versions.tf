@@ -12,6 +12,9 @@ terraform {
   }
 
   backend "s3" {
+    bucket = "oms-deployment-state"
+    key = "theoldmonks/dev/parameterstore/terraform.tfstate"
+    region = "ap-south-1"
   }
 }
 
