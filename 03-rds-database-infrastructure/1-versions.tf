@@ -12,15 +12,14 @@ terraform {
   }
 
    backend "s3" {
-    bucket = "oms-deployment-state"
-    key = "theoldmonks/dev/rds/terraform.tfstate"
-    region = "ap-south-1"
   }
 }
 
 #provider block
 provider "aws" {
   region = var.aws_region
+  access_key = var.aws_accesskey
+  secret_key = var.aws_secret_key
 }
 
 
