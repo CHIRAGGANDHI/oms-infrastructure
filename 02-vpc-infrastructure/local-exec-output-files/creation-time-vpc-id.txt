@@ -12,3 +12,7 @@ VPC created on `date` and VPC ID: vpc-027b9be1512f2cd7f
 VPC created on `date` and VPC ID: vpc-00805b0282ac0b195 
 VPC created on `date` and VPC ID: vpc-0d9195f3d99a95f7e 
 VPC created on `date` and VPC ID: vpc-078be59d2190d1f3b 
+VPC created on `date` and VPC ID: vpc-0a408b25b71246dcd 
+VPC created on `date` and VPC ID: vpc-0e8331665cb33973c 
+VPC created on `date` and VPC ID: vpc-086f6db1dad2fae92 
+VPC created on `date` and VPC ID: vpc-0e34a02e04e7dae42 

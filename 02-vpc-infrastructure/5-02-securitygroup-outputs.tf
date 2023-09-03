@@ -29,6 +29,10 @@ output "mqbroker_sg_group_id" {
   value       = module.mqbroker_sg.security_group_id  
 }
 
+output "lambda_sg_group_id" {
+  description = "The name of the security group"
+  value       = module.lambda_sg.security_group_id  
+}
 /*
 # Private EC2 Instances Security Group Outputs
 ## private_sg_group_id
